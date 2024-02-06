@@ -13,8 +13,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double? scrolledUnderElevation;
-
     return WillPopScope(
         onWillPop: () {
           var future = controller.canGoBack();
@@ -28,15 +26,6 @@ class HomeScreen extends StatelessWidget {
         },
         child: SafeArea(
           child: Scaffold(
-            appBar: AppBar(
-              title: const Text('리눅스 마스터 기출 문제 풀이'),
-              backgroundColor: const Color.fromARGB(255, 99, 102, 240),
-              scrolledUnderElevation: scrolledUnderElevation,
-              titleTextStyle: const TextStyle(
-                fontSize: 18,
-                fontFamily: 'RobotoMono',
-              ),
-            ),
             body: WebViewWidget(
               controller: controller,
             ),
